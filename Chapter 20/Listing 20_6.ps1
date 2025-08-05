@@ -1,4 +1,4 @@
-<#
+psversion<#
 .SYNOPSIS
 Get-DiskInventory retrieves logical disk information from one ormore computers.
 .DESCRIPTION
