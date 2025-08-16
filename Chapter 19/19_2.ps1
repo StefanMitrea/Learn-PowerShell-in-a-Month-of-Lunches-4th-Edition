@@ -1,4 +1,4 @@
-Get-CimInstance -class Win32_LogicalDisk -computername localhost `-filter "drivetype=3" | 
+Get-CimInstance -class Win32_LogicalDisk -computername localhost -filter "drivetype=3" | 
     Sort-Object -property DeviceID | 
         Format-Table -property DeviceID, 
             @{label = 'FreeSpace(MB)'; expression = { $_.FreeSpace / 1MB -as [int] } }, 
