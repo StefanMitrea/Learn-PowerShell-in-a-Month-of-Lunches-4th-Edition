@@ -13,7 +13,7 @@ Get-DiskInventory -ComputerName SRV02 -drivetype 3
 #>
 [CmdletBinding()]  
 param (  
-    [Parameter(Mandatory=$True)]
+    [Parameter(Mandatory=$True,HelpMessage="Enter a computer name to query")]
     [Alias('host')] 
     [string]$computername = 'localhost',  
     [int]$drivetype = 3)
