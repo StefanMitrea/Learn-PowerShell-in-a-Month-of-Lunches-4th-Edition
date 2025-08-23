@@ -15,7 +15,8 @@ Get-DiskInventory -ComputerName SRV02 -drivetype 3
 param (  
     [Parameter(Mandatory=$True)]
     [Alias('host')] 
-    [string]$computername = 'localhost',  
+    [string]$computername = 'localhost',
+    [ValidateSet(2,3)]  
     [int]$drivetype = 3)
 Get-CimInstance -class Win32_LogicalDisk -ComputerName $computername ` -filter "drivetype=$drivetype" | 
     Sort-Object -property DeviceID | Select-Object -property DeviceID,         
